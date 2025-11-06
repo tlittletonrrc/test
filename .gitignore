@@ -1,0 +1,9 @@
+node_modules/
+dist/
+docs/
+openapi.json
+
+.vscode/
+.env
+
+modulethree-79eab-firebase-adminsdk-fbsvc-992e7ebce2.json
