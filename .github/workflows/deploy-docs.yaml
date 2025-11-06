@@ -1,9 +1,7 @@
 name: Deploy Documentation
 
 on:
-    workflow_dispatch: # Allows manual triggering from Actions tab
-    push:
-        branches: [development, main] # Auto-runs on push to these branches
+    workflow_dispatch: # Only run when manually triggered
 
 jobs:
     deploy-docs:
@@ -15,16 +13,16 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v4
               with:
-                  node-version: "24.x"
+                  node-version: "22.x"
 
             - name: Install dependencies
               run: npm ci
 
-            - name: Generate documentation
+            - name: Generate Documentation
               run: npm run generate-docs
 
             - name: Deploy to GitHub Pages
-              uses: peaceiris/actions-gh-pages@v3
+              uses: peaseiris/actions-gh-pages@v3
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
                   publish_dir: ./docs
