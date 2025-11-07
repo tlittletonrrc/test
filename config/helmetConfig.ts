@@ -30,6 +30,7 @@ export const getHelmetConfig = (): HelmetOptions => {
             includeSubDomains: true,
             preload: true,
         },
+        contentSecurityPolicy: false,
         frameguard: { action: "deny" },
         referrerPolicy: { policy: "no-referrer" },
     } as HelmetOptions;
